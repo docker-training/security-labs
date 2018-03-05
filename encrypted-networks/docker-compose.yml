@@ -1,0 +1,15 @@
+version: "3.5"
+services:
+    web:
+        build: api
+        image: training/redis-client:1.0
+        ports:
+            - 80:3000
+        networks:
+            - test-net
+    redis:
+        image: redis:alpine
+        networks:
+            - test-net
+networks:
+    test-net:
